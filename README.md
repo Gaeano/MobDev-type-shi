@@ -1,2 +1,2 @@
-# MOBILE DEVELOPMENT CLASS ACTIVITIES AND PROJECTS
+# Mobile Development Class Activities & Projects
 A.Y. 2025 - 2026
