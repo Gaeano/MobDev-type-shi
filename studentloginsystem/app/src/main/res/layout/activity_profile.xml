@@ -324,19 +324,40 @@
         android:textAlignment="center"
         />
 
-    <Button
-        android:id="@+id/backToShop"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Shop more"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:backgroundTint="#8DF762"
-        app:cornerRadius="24dp"
-        android:paddingHorizontal="40dp"
-        android:paddingVertical="12dp"
-        android:layout_gravity="center_horizontal"
-        android:textAllCaps="false"
-        android:layout_marginTop="16dp"/>
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="16dp">
 
+        <Button
+            android:id="@+id/backToShop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Shop more"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:backgroundTint="#8DF762"
+            app:cornerRadius="24dp"
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="12dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnSortFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Sort &amp; Filter"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:backgroundTint="#8DF762"
+            app:cornerRadius="24dp"
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="12dp"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
 </LinearLayout>

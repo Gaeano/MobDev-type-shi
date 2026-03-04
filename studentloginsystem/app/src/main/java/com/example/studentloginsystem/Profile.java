@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 
 public class Profile extends AppCompatActivity {
 
-    Button logoutBtn, backBtn;
+    Button logoutBtn, backBtn, sortFilterBtn;
 
     TextView userNameResult, passResult, emptyCartText;
 
@@ -69,6 +69,7 @@ public class Profile extends AppCompatActivity {
 
         logoutBtn = findViewById(R.id.logoutBtn);
         backBtn = findViewById(R.id.backToShop);
+        sortFilterBtn = findViewById(R.id.btnSortFilter);
 
 
         String user = getIntent().getStringExtra("user");
@@ -112,6 +113,16 @@ public class Profile extends AppCompatActivity {
                     intent.putExtra("pass", pass);
                     intent.putExtra("products", arrayProducts);
 
+                    startActivity(intent);
+                }
+            });
+
+            sortFilterBtn.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Profile.this, CategoryActivity.class);
+                    intent.putExtra("user", user);
+                    intent.putExtra("pass", pass);
                     startActivity(intent);
                 }
             });

@@ -1,9 +1,11 @@
 package com.example.studentloginsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -29,6 +31,9 @@ public class CategoryActivity extends AppCompatActivity {
     ArrayList<productModel> productsCategory = new ArrayList<>();
     ArrayList<productModel> currentDisplayedList = new ArrayList<>();
 
+
+    Button button;
+
     Spinner spinner, spinnerSize, spinnerColor;
     String[] filter = {"Lowest Price", "Highest Price", "A - Z", "Z - A"};
     String[] colors = {"All", "White", "Black", "Navy", "Silver", "Red", "Green", "Multi", "Blue", "Gray"};
@@ -40,10 +45,25 @@ public class CategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_category);
-       listView = findViewById(R.id.list);
-       spinner = findViewById(R.id.spinner);
-       spinnerSize = findViewById(R.id.spinnerSize);
-       spinnerColor = findViewById(R.id.spinnerColor);
+        listView = findViewById(R.id.list);
+        spinner = findViewById(R.id.spinner);
+        spinnerSize = findViewById(R.id.spinnerSize);
+        spinnerColor = findViewById(R.id.spinnerColor);
+        button = findViewById(R.id.button);
+
+        String user = getIntent().getStringExtra("user");
+        String pass = getIntent().getStringExtra("pass");
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CategoryActivity.this, Profile.class);
+                intent.putExtra("user", user);
+                intent.putExtra("pass", pass);
+                startActivity(intent);
+            }
+        });
 
 
 
